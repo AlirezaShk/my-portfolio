@@ -1,0 +1,263 @@
+$neon-blue: #167fb1
+
+.sideR,
+.sideL
+    position: fixed
+    width: 10vw
+    height: 200vh
+    background-image: url("../../public/resources/1.gif")
+    background-repeat: repeat-y
+    background-size: 200% 50%
+    background-origin: border-box
+    z-index: 2
+
+    &::after
+        content: ""
+        position: absolute
+        width: 3vw
+        height: 200vh
+        background-repeat: no-repeat
+        background-size: 100% 100%
+        background-origin: border-box
+        background-blend-mode: screen
+        z-index: 2
+
+    &[data-loading="1"]
+        animation-name: loading-sides
+        // animation-duration: attr(data-loading-time, "15s")
+        animation-duration: 15s
+        animation-delay: 1s
+        animation-play-state: paused
+        animation-iteration-count: infinite
+        animation-fill-mode: forwards
+
+        &[data-loading-state="running"]
+            animation-play-state: running
+
+    &[data-stage="1"]
+        width: 0
+
+        &::after
+            width: 0
+
+.sideR
+    right: 0
+    background-position-x: left
+    &::after
+        background: linear-gradient(-90deg, black, transparent)
+        right: 100%
+
+.sideL
+    left: 0
+    background-position-x: right
+    &::after
+        background: linear-gradient(90deg, black, transparent)
+        left: 100%
+
+.myPic
+    width: 80vw
+    left: -3vw
+    position: relative
+    height: 30vh
+    border: 3px solid black
+    overflow: hidden
+
+    & img
+        width: 100%
+        margin: auto
+        top: -30%
+        right: 0
+        left: 0
+        position: absolute
+        zoom: normal
+        transform: scale(1.5)
+
+@media screen and (min-width: 1080px)
+    .myPic
+        height: 45vh
+
+    & img
+        top: -60%
+        transform: scale(1.25)
+
+.introduction
+    margin-top: 3.5ch
+    padding: 0 10px
+    text-align: justify
+    text-justify: newspaper
+    width: 100%
+    font-size: 2ch
+    max-width: 700px
+    margin: 3.5ch auto 0 auto
+
+.myName
+    right: 0
+    left: 0
+    margin: auto
+    font-size: 2.5rem
+    transition-delay: 1s
+    transition-duration: 1s
+
+    & span
+        z-index: 1
+        font-size: inherit
+        color: black !important
+        position: relative
+        animation-name: loading-letter
+        // animation-duration: attr(data-loading-time, "15s")
+        animation-duration: 13s
+        animation-delay: 1s
+        animation-play-state: paused
+        animation-iteration-count: infinite
+        animation-fill-mode: forwards
+
+    &[data-stage="0"] span[data-loading="1"]
+        // animation-name: loading-letter
+        // // animation-duration: attr(data-loading-time, "15s")
+        // animation-duration: 13s
+        // animation-delay: 1s
+        // animation-play-state: paused
+        // animation-iteration-count: infinite
+        // animation-fill-mode: forwards
+
+        &[data-loading-state="running"]
+            animation-play-state: running
+
+    &[data-stage="1"]
+        span
+            font-size: 4rem
+            margin-top: 0
+
+@keyframes loading-letter
+    0% //0
+
+    25% //4s
+        font-size: 30ch
+        margin: auto
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+
+    33% //5s
+        font-size: 30ch
+        position: fixed
+        margin: auto
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background-color: white
+
+    67%
+
+    85%
+        margin-top: 0
+
+    100%
+        font-size: 4rem
+        margin-top: 0
+
+@keyframes loading-sides
+    0%
+
+    50% //2.5s
+
+    33% //5s
+        width: 20vw
+
+    72% //12s
+        width: 0
+
+@keyframes rotate
+    100%
+        transform: rotate(1.5turn)
+
+.next
+    position: absolute
+    right: 0
+    left: 0
+    margin: auto
+    bottom: 10%
+    z-index: 0
+    width: 120px
+    height: 120px
+    border-radius: 10px
+    overflow: hidden
+    padding: 2rem
+    border-radius: 50%
+    box-sizing: border-box
+    cursor: pointer
+
+    &::before
+        content: ""
+        position: absolute
+        z-index: -2
+        left: -50%
+        top: -50%
+        width: 200%
+        height: 200%
+        background-color: $neon-blue
+        background-repeat: no-repeat
+        background-size: 50% 50%, 50% 50%
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%
+        background-image: linear-gradient($neon-blue, $neon-blue), linear-gradient(white, white), linear-gradient($neon-blue, $neon-blue), linear-gradient(white, white)
+        animation: rotate 4s linear infinite
+        border-radius: 50%
+        box-sizing: border-box
+        transition-duration: 1s
+
+    &::after
+        content: ""
+        position: absolute
+        z-index: -1
+        left: 6px
+        top: 6px
+        width: calc(100% - 12px)
+        height: calc(100% - 12px)
+        background: white
+        border-radius: 50%
+        box-sizing: border-box
+
+    span
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: fit-content
+        height: fit-content
+        transition-duration: 0.25s
+
+    &:hover
+        &::before
+            animation-duration: 2s
+        span
+            font-size: 3ch
+
+.page
+    height: 100vh
+
+.trans1,
+.trans2
+    position: absolute
+    right: 0
+    left: 0
+    top: 0
+    bottom: 0
+    transform: scale(0)
+    transition-duration: 3s
+    opacity: 0
+    border-radius: 50%
+    opacity: 1
+
+    &[data-state="ok"]
+        transform: scale(2)
+
+.trans1
+    background-image: radial-gradient(transparent, $neon-blue)
+
+.trans2
+    transition-delay: 0.25s
+    background-color: white

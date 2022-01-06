@@ -1,0 +1,46 @@
+.list
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    width: 15vw
+    height: fit-content
+    // min-height: 20vh
+    margin: auto
+    border-top-right-radius: 15%
+    border-bottom-right-radius: 15%
+    background-color: #000a
+    color: white
+    display: grid
+    grid-auto-flow: row
+    overflow: hidden
+
+.contentPanel
+    position: relative
+    width: 100%
+    padding: 1vw
+
+.contentWrapper
+    position: relative
+    width: 100%
+
+.contentAnchor
+    position: relative
+    width: 100%
+    height: fit-content
+    text-decoration: none
+    color: white
+    font-size: 1.25rem
+    padding: 10px 5px
+    text-align: center
+    transition-duration: 0.5s
+    border: 2px solid transparent
+
+    &:hover
+        color: white
+        background-color: black
+        border-top: 2px solid white
+        border-bottom: 2px solid white
+
+    &.active
+        background-color: black

@@ -1,0 +1,59 @@
+.mainWrapper
+    position: relative
+    width: 100%
+    overflow: hidden
+    display: flex
+    grid-auto-flow: column
+    border-radius: 15px
+
+.card
+    position: relative
+    width: 10%
+    min-width: 85px
+    transition: max-height 1s, width 1s, background-color 1s
+    background-color: #333
+    overflow: hidden
+    padding: 15px
+    > section
+        > span
+            color: white
+            position: relative
+            top: 0
+            bottom: 0
+            margin: auto
+            transition-duration: 1s
+        > section
+            transition-duration: 0.5s
+            transition-delay: 0.5s
+            opacity: 0
+    &.active
+        width: 80%
+        &::first-child
+            background-color: #e4fff9
+        > section
+            > span
+                color: black
+                font-size: 25px
+                position: relative
+                top: 0
+                margin: auto
+                height: 20px
+            > section
+                transition-delay: 0.25s
+                opacity: 1
+                margin-top: 20px
+    *[data-type="percentile"]
+        transition-delay: 0.65s
+        transition-duration: 0.8s
+    &:not(.active) *[data-type="percentile"]
+        width: 0 !important
+        width: 0 !important
+    &:nth-of-type(1)
+        &.active
+            background-color: #e4fff9
+    &:nth-of-type(2)
+        &.active
+            background-color: #f7eefd
+    &:nth-of-type(3)
+        &.active
+            background-color: #f0f5ff

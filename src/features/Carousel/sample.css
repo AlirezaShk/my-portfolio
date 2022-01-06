@@ -1,0 +1,17 @@
+.pos-2 {
+    opacity: 0;
+    margin-left: -33.33%;
+}
+.pos-1 {
+    margin-left: 0;
+}
+.pos0 {
+    margin-left: 33.33%;
+}
+.pos1 {
+    margin-left: 66.66%;
+}
+.pos2 {
+    opacity: 0;
+    margin-left: 100%;
+}

@@ -1,0 +1,5 @@
+export const LOAD_NEXT = 'role/LOAD_NEXT'
+export const WRITE_ONE = 'role/WRITE_ONE'
+export const WRITEPOS_ONE = 'role/WRITEPOS_ONE'
+export const WRITE_NEXT = 'role/WRITE_NEXT'
+export const DELETE_ONE = 'role/DELETE_ONE'
