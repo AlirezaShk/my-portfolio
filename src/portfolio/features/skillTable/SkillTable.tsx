@@ -46,7 +46,7 @@ export function SkillTable(props: Props) {
             <Cardboard
                 height={400}
                 changeTime={200}
-                className={"carousel"}
+                className={"cardboard"}
                 displayCount={3}
             >
                 {props.data.map((each) => createCat(each))}

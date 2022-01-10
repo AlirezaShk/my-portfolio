@@ -89,7 +89,7 @@ export default class ContentList extends React.Component {
         [list, contents] = this.formChildren(content);
         return (
             <>
-                <section className={styles.list}>{list}</section>
+                <nav className={styles.list}>{list}</nav>
                 <section className={styles.contentPanel}>{contents}</section>
             </>
         );

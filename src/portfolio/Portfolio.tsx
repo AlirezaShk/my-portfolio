@@ -11,6 +11,7 @@ import ContentList from "./features/contentList/ContentList";
 import Percentile from "./features/skillTable/components/Percentile/Percentile";
 import { SkillTable } from "./features/skillTable/SkillTable";
 import SkillsData from "../data/skills";
+import Timeline from "./features/timeline/Timeline";
 
 const loadingState = {
     play: "running",
@@ -113,32 +114,24 @@ function Portfolio() {
             )}
             {stage === 1 && (
                 <>
-                    <div className={styles.next} onClick={() => setTest(true)}>
+                    {/* <div className={styles.next} onClick={() => setTest(true)}>
                         <span>Click Me</span>
-                    </div>
-                    <div
+                    </div> */}
+                    {/* <div
                         className={styles.trans1}
                         data-state={test && "ok"}
                     ></div>
                     <div
                         className={styles.trans2}
                         data-state={test && "ok"}
-                    ></div>
+                    ></div> */}
                     <ContentList>
-                        <span id="content-1" title="title-1">
-                            Hi
-                        </span>
-                        <span id="content-2" title="title-2">
-                            Hi2
-                        </span>
-                        <span id="content-3" title="title-3">
-                            Hi2
-                        </span>
                         <SkillTable
                             id="skillTable"
                             title="Skill Set"
                             data={SkillsData}
                         />
+                        <Timeline id="pastExp" title="Past Experience" />
                     </ContentList>
                 </>
             )}

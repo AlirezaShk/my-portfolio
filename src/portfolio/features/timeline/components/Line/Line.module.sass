@@ -1,0 +1,39 @@
+@import "../../base"
+
+.lineWrapper
+    position: relative
+    transition-duration: 1s
+    .line
+        background-color: $time-line-color
+        position: absolute
+        margin: auto
+
+    &[data-type="v"]
+        height: $line-length
+        &[data-length="full"]
+            height: 100%
+        &[data-length="small"]
+            height: $line-small-length
+        .line
+            height: 100%
+            width: $line-width
+            right: 0
+            left: 0
+
+    &[data-type="h"]
+        width: $line-length
+        &[data-length="full"]
+            width: 100%
+        &[data-length="half"]
+            width: 100%
+            .line
+                width: 50%
+                right: 0
+                left: 0
+        &[data-length="small"]
+            height: $line-small-length
+        .line
+            width: 100%
+            height: $line-width
+            top: 0
+            bottom: 0

@@ -1,0 +1,70 @@
+@import "../../base"
+
+.branchWrapper
+    position: relative
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: auto $branch-width
+    .fullContext
+        position: absolute
+        height: fit-content
+        min-height: 100%
+        width: calc(50% - 148px)
+        margin: 0
+        opacity: 0
+        transition: width 0.9s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0.5s
+    > *:not(.fullContext)
+        transition-duration: 0.5s
+        transition: opacity 0.2s 0.5s
+    &[data-more="on"]
+        > *:not(.fullContext)
+            opacity: 0
+            transition: opacity 0.1s 0s
+        .fullContext
+            opacity: 1
+            transition: width 1s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0s
+            width: 80%
+        &[data-direction="l"]
+            .fullContext
+                margin-left: 10%
+        &[data-direction="r"]
+            .fullContext
+                margin-right: 10%
+    &[data-direction="l"]
+        direction: rtl
+        .fullContext
+            left: 0
+        .title
+            color: black
+            left: 0
+            transform: rotateZ(22.5deg)
+        .connectorLine
+            > div
+                background: linear-gradient(-90deg, $time-line-color, currentColor)
+    &[data-direction="r"]
+        .fullContext
+            right: 0
+        .title
+            color: black
+            right: 0
+            transform: rotateZ(-22.5deg)
+        .connectorLine
+            > div
+                background: linear-gradient(90deg, $time-line-color, currentColor)
+
+.contentWrapper
+    position: relative
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: $line-width $line-length auto
+
+.titleWrapper
+    position: relative
+
+    .title
+        width: fit-content
+        position: absolute
+        top: 0
+        bottom: 0
+        margin: auto
+        height: fit-content
