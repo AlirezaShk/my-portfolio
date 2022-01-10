@@ -1,0 +1,508 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Andrew Sharifikia",
+    "givenName": "Alireza",
+    "familyName": "Sharifikia",
+    "email": "alireza.sharifikia@gmail.com",
+    "@id": "#andrew",
+    "jobTitle": [
+        "Senior Full Stack Developer",
+        "Senior Backend Developer",
+        "Senior Frontend Developer",
+        {
+            "@type": "DefinedTerm",
+            "inDefinedTermSet": "https://targetjobs.co.uk/careers-advice/job-descriptions",
+            "termCode": "web-developer-job-description",
+            "name": "Web Developer",
+            "url": "https://targetjobs.co.uk/careers-advice/job-descriptions/web-developer-job-description"
+        }
+    ],
+    "alumniOf": [
+        {
+            "@type": "EducationalOrganization",
+            "@id": "#kntu",
+            "samesAs": "https://en.kntu.ac.ir/",
+            "name": "K. N. Toosi University of Technology",
+            "alumni": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "OrganizationRole",
+                    "@id": "#bachelor",
+                    "roleName": "Bachelor of Electronics Engineering",
+                    "startDate": "2015-09-31",
+                    "endDate": "2019-09-31"
+                },
+                "sameAs": "#andrew"
+            },
+            "department": [
+                {
+                    "@type": "Organization",
+                    "@id": "#kn2c",
+                    "name": "KN2C Robotics Laboratory"
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "#piezo",
+                    "name": "Piezoelectric Materials Research Laboratory"
+                },
+                {
+                    "@type": "Organization",
+                    "@id": "#perov",
+                    "name": "Piezoelectric Materials Research Laboratory"
+                }
+            ]
+        },
+        {
+            "@type": "Corporation",
+            "name": "CoolCup",
+            "samesAs": "https://coolcup.ir",
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "EmployeeRole",
+                    "@id": "#Rcc",
+                    "roleName": "Junior Web Developer",
+                    "occupationalCategory": "15-1254.00",
+                    "startDate": "2016-06-05",
+                    "endDate": "2017-04-20"
+                },
+                "sameAs": "#andrew"
+            }
+        },
+        {
+            "@type": "Organization",
+            "name": "KN2C Robotics Laboratory",
+            "samesAs": [
+                "http://kn2c.aras.kntu.ac.ir/",
+                "#kn2c"
+            ],
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "OrganizationRole",
+                    "@id": "#RKN2C",
+                    "roleName": "Software Developer",
+                    "occupationalCategory": "15-1254.00",
+                    "startDate": "2017-01-10",
+                    "endDate": "2017-10-21"
+                },
+                "sameAs": "#andrew"
+            }
+        },
+        {
+            "@type": "Organization",
+            "name": "Honar Omran Iranian",
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": [
+                    {
+                        "@type": "EmployeeRole",
+                        "@id": "#RHOI1",
+                        "roleName": "Web Developer",
+                        "occupationalCategory": "15-1254.00",
+                        "startDate": "2017-10-01",
+                        "endDate": "2018-11-01"
+                    },
+                    {
+                        "@type": "EmployeeRole",
+                        "@id": "#RHOI2",
+                        "roleName": "Lead Web Developer",
+                        "occupationalCategory": "15-1254.00",
+                        "startDate": "2018-11-01",
+                        "endDate": "2019-11-01"
+                    }
+                ],
+                "sameAs": "#andrew"
+            }
+        },
+        {
+            "@type": "Organization",
+            "name": "Piezoelectric Research Laboratory",
+            "samesAs": "#piezo",
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "OrganizationRole",
+                    "@id": "#Rpiezo",
+                    "roleName": "Piezoelectric Materials Energy Harvester Circuit Designer",
+                    "occupationalCategory": "17-2072.00",
+                    "startDate": "2017-11-06",
+                    "endDate": "2018-05-22"
+                },
+                "sameAs": "#andrew"
+            }
+        },
+        {
+            "@type": "Organization",
+            "name": "Semiconductors Research Laboratory",
+            "samesAs": "#perov",
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "OrganizationRole",
+                    "@id": "#Rperov",
+                    "roleName": "Materials Scientist",
+                    "occupationalCategory": "19-2032.00",
+                    "startDate": "2018-12-16",
+                    "endDate": "2019-09-31"
+                },
+                "sameAs": "#andrew"
+            }
+        },
+        {
+            "@type": "Organization",
+            "name": "UoozET",
+            "employee": {
+                "@type": "Person",
+                "hasOccupation": {
+                    "@type": "OrganizationRole",
+                    "@id": "#Ruzet",
+                    "roleName": "Senior Full Stack Lead Web Developer",
+                    "occupationalCategory": "15-1254.00",
+                    "startDate": "2020-08-01",
+                    "endDate": "2021-09-01"
+                },
+                "sameAs": "#andrew"
+            }
+        }
+    ],
+    "hasOccupation": [
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Junior Web Developer",
+                "occupationalCategory": "15-1254.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "roleName": "Junior Web Developer",
+            "sameAs": "#Rcc",
+            "startDate": "2016-06-05",
+            "endDate": "2017-04-20"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Software Developer",
+                "occupationalCategory": "15-1252.00"
+            },
+            "sameAs": "#RKN2C",
+            "startDate": "2017-01-10",
+            "endDate": "2017-10-21"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Freelance Web Developer",
+                "occupationalCategory": "15-1254.00"
+            },
+            "startDate": "2017-04-20",
+            "endDate": "2017-10-01"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Web Developer",
+                "occupationalCategory": "15-1254.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "sameAs": "#RHOI1",
+            "roleName": "Web Developer",
+            "startDate": "2017-10-01",
+            "endDate": "2018-11-01"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Lead Web Developer",
+                "occupationalCategory": "15-1254.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "sameAs": "#RHOI2",
+            "roleName": "Lead Web Developer",
+            "startDate": "2018-11-01",
+            "endDate": "2019-11-01"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Piezoelectric Materials Energy Harvester Circuit Designer",
+                "occupationalCategory": "17-2072.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "sameAs": "#Rpiezo",
+            "roleName": "Piezoelectric Materials Energy Harvester Circuit Designer",
+            "startDate": "2017-11-06",
+            "endDate": "2018-05-22"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Materials Scientist",
+                "occupationalCategory": "19-2032.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "sameAs": "#Rperov",
+            "roleName": "Materials Scientist",
+            "startDate": "2018-12-16",
+            "endDate": "2019-09-31"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Freelance Full Stack Web Developer",
+                "occupationalCategory": "15-1254.00"
+            },
+            "roleName": "Freelance Full Stack Web Developer",
+            "startDate": "2019-11-01",
+            "endDate": "2020-08-01"
+        },
+        {
+            "@type": "Role",
+            "hasOccupation": {
+                "@type": "Occupation",
+                "name": "Senior Full Stack Lead Web Developer",
+                "occupationalCategory": "15-1254.00",
+                "occupationLocation": {
+                    "@type": "Country",
+                    "name": "Iran",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "IR",
+                        "name": "Iran"
+                    }
+                }
+            },
+            "sameAs": "#Ruzet",
+            "roleName": "Senior Full Stack Lead Web Developer",
+            "startDate": "2020-08-01",
+            "endDate": "2021-09-01"
+        }
+    ],
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "contactType": "General",
+            "email": "alireza.sharifikia@gmail.com",
+            "availableLanguage": [
+                {
+                    "@type": "Language",
+                    "name": "English"
+                },
+                {
+                    "@type": "Language",
+                    "name": "German"
+                },
+                {
+                    "@type": "Language",
+                    "name": "Persian"
+                },
+                {
+                    "@type": "Language",
+                    "name": "Farsi"
+                }
+            ]
+        },
+        {
+            "@type": "ContactPoint",
+            "contactType": "GitHub",
+            "identifier": "AlirezaShk",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+            "url": "https://github.com/AlirezaShk"
+        }
+    ],
+    "knowsLanguage": [
+        {
+            "@type": "Language",
+            "@id": "#Leng",
+            "name": "English"
+        },
+        {
+            "@type": "Language",
+            "name": "Japanese"
+        },
+        {
+            "@type": "Language",
+            "@id": "#Lger",
+            "name": "German"
+        },
+        {
+            "@type": "Language",
+            "@id": "#Lper",
+            "name": "Persian"
+        },
+        {
+            "@type": "Language",
+            "sameAs": "#Lper",
+            "name": "Farsi"
+        }
+    ],
+    "knowsAbout": [
+        "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics",
+        "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        "https://sass-lang.com/",
+        "https://getbootstrap.com/",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "https://jquery.com/",
+        "https://vuejs.org/",
+        "https://reactjs.org/",
+        "https://angular.io/",
+        "https://www.typescriptlang.org/",
+        "https://www.php.net/",
+        "https://laravel.com/",
+        "https://cakephp.org/",
+        "https://www.python.org/",
+        "https://www.djangoproject.com/",
+        "https://go.dev/",
+        "https://nodejs.org/",
+        "https://www.cplusplus.com/",
+        "https://www.java.com/",
+        "https://www.mysql.com/",
+        "https://www.postgresql.org/",
+        "https://www.sqlite.org/",
+        "https://www.mongodb.com/",
+        "https://httpd.apache.org/",
+        "https://www.nginx.com/",
+        "https://www.docker.com/",
+        "https://www.uml.org/"
+    ],
+    "nationality": {
+        "@type": "Country",
+        "name": "Iran",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IR",
+            "name": "Iran"
+        }
+    },
+    "homeLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "name": "Japan"
+        }
+    },
+    "url": "https://github.com/AlirezaShk",
+    "hasCredential": [
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Electronics Engineering Bachelor's Degree",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "bestRating": 5,
+                "worstRating": 0,
+                "ratingValue": 3.75,
+                "name": "GPA"
+            },
+            "credentialCategory": "degree",
+            "educationalLevel": "Bachelors of Science",
+            "dateCreated": "2019-09",
+            "about": {
+                "@type": "EducationalOccupationalProgram",
+                "name": "Electronics Engineering"
+            },
+            "recognizedBy": {
+                "@type": "CollegeOrUniversity",
+                "name": "K. N. Toosi University of Technology",
+                "sameAs": "#kntu"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "TestDaF (German Language Proficiency) Certificate",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "bestRating": 5,
+                "worstRating": 0,
+                "ratingValue": 4,
+                "name": "TestDaF"
+            },
+            "credentialCategory": "certificate",
+            "educationalLevel": "Advanced",
+            "dateCreated": "2019-06",
+            "about": {
+                "@type": "Language",
+                "name": "German",
+                "sameAs": "#Lger"
+            },
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "TestDaF Institute",
+                "sameAs": "https://www.testdaf.de"
+            }
+        },
+        {
+            "@type": "EducationalOccupationalCredential",
+            "name": "IELTS (English Language Proficiency) Certificate",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "bestRating": 9,
+                "worstRating": 0,
+                "ratingValue": 8,
+                "name": "IELTS"
+            },
+            "credentialCategory": "certificate",
+            "educationalLevel": "Advanced",
+            "dateCreated": "2021-09",
+            "about": {
+                "@type": "Language",
+                "name": "English",
+                "sameAs": "#Leng"
+            },
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "British Council",
+                "sameAs": "https://takeielts.britishcouncil.org/"
+            }
+        }
+    ]
+}
