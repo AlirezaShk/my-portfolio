@@ -5,7 +5,6 @@ import { delay } from "../../../lib/extentions";
 import { deleteOne, writeOne, writePositionOne } from "./actions";
 import { Skill, SkillCat, ColorThemes } from "./constants";
 import styles from "./SkillTable.module.sass";
-import { selectTitle } from "./selectors";
 import Percentile from "./components/Percentile/Percentile";
 import Carousel from "../../../features/Carousel/Carousel";
 import Cardboard from "../../../features/Cardboard/Cardboard";
@@ -51,6 +50,10 @@ export function SkillTable(props: Props) {
             >
                 {props.data.map((each) => createCat(each))}
             </Cardboard>
+            <div>
+                Note that 100% means I can realize anything a project might need
+                within the scope of that programming language and/or library.
+            </div>
         </div>
     );
 }

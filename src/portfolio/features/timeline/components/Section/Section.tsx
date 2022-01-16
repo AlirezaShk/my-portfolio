@@ -5,7 +5,7 @@ import styles from "./Section.module.sass";
 
 interface Props {
     className: string;
-    title: string | Array<JSX.Element>;
+    title: string | Array<JSX.Element> | undefined;
     color?: string | undefined;
     bgColor?: string | undefined;
     top?: number | undefined;
@@ -27,7 +27,7 @@ export default class Section extends React.Component<Props> {
         this.title = props.title;
         this.color = props.color;
         this.bgColor = props.bgColor;
-        this.top = props.top !== undefined ? props.top + "px" : "0";
+        this.top = props.top !== undefined ? props.top - 150 + "px" : "0";
         // this.height = props.height;
     }
 
