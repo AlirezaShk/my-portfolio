@@ -261,3 +261,77 @@
 .trans2
     transition-delay: 0.25s
     background-color: white
+
+@keyframes bgRotate
+    // 32%
+    //     transform: rotate(0.6turn)
+    // 48%
+    // 80%
+    //     transform: rotate(0.8turn)
+    // 100%
+    50%
+        transform: rotate(1turn)
+
+// @keyframes bgRotateNeg
+//     50%
+//         transform: rotate(-0.5turn)
+//     60%
+//     100%
+//         transform: rotate(-0.5turn)
+#bg
+    background-color: black
+    display: flex
+    position: fixed
+    width: 110vw
+    height: 110vh
+    z-index: -1000
+    top: -10vh
+    bottom: -10vh
+    left: -10vw
+    right: -10vw
+    margin: auto
+    align-items: center
+    align-content: space-around
+    justify-content: space-around
+    .animatron
+        z-index: -1000
+        position: absolute
+        height: 200%
+        min-width: 1000px
+        top: -50%
+        align-self: center
+        .bgDisks
+            animation-play-state: paused
+            animation-name: bgRotate
+            animation-iteration-count: infinite
+            animation-timing-function: ease-in-out
+            animation-fill-mode: forwards
+            transition-duration: 1.5s
+            transition-timing-function: linear
+            &:nth-of-type(1)
+                animation-duration: 20s
+                // animation-duration: 4s
+            &:nth-of-type(2)
+                animation-duration: 30s
+                // animation-duration: 6s
+            &:nth-of-type(3)
+                animation-duration: 30s
+                // animation-duration: 6s
+            &:nth-of-type(4)
+                animation-duration: 20s
+                // animation-duration: 4s
+            &:nth-of-type(2n+1)
+                animation-direction: reverse
+        &.active
+            .bgDisks
+                transition-duration: 0.5s
+                animation-play-state: running
+    .overlay
+        z-index: -999
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        width: 100vw
+        background-image: linear-gradient(90deg, transparent, white 40%, white 60%, transparent)
