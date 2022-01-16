@@ -5,14 +5,22 @@
     display: grid
     grid-auto-flow: column
     grid-template-columns: auto $branch-width
+    width: 100%
     .fullContext
         position: absolute
-        height: fit-content
-        min-height: 100%
+        height: 100%
+        overflow: hidden
+        // min-height: 100%
         width: calc(50% - 148px)
         margin: 0
         opacity: 0
-        transition: width 0.9s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0.5s
+        transition: width 0.9s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0.5s, height 1s 2s
+        z-index: 0
+    .shortContext
+        z-index: 10
+        direction: ltr
+        overflow: hidden
+
     > *:not(.fullContext)
         transition-duration: 0.5s
         transition: opacity 0.2s 0.5s
@@ -21,9 +29,13 @@
             opacity: 0
             transition: opacity 0.1s 0s
         .fullContext
+            z-index: 10
+            height: fit-content
             opacity: 1
-            transition: width 1s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0s
+            transition: width 1s 0s, margin 0.9s 0s, right 1s 0.5s, left 1s 0.5s, opacity 0.5s 0s, height 1s 2s
             width: 80%
+        .shortContext
+            z-index: 0
         &[data-direction="l"]
             .fullContext
                 margin-left: 10%
@@ -34,7 +46,9 @@
         direction: rtl
         .fullContext
             left: 0
-        .title
+            > *
+                direction: ltr
+        .note
             color: black
             left: 0
             transform: rotateZ(22.5deg)
@@ -44,7 +58,7 @@
     &[data-direction="r"]
         .fullContext
             right: 0
-        .title
+        .note
             color: black
             right: 0
             transform: rotateZ(-22.5deg)
@@ -58,10 +72,11 @@
     grid-auto-flow: column
     grid-template-columns: $line-width $line-length auto
 
-.titleWrapper
+.noteWrapper
     position: relative
+    direction: ltr
 
-    .title
+    .note
         width: fit-content
         position: absolute
         top: 0

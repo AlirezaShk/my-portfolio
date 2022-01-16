@@ -3,10 +3,12 @@
 .lineWrapper
     position: relative
     transition-duration: 1s
+    z-index: -10
     .line
         background-color: $time-line-color
         position: absolute
         margin: auto
+        z-index: -1
 
     &[data-type="v"]
         height: $line-length
