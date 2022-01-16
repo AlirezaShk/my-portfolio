@@ -1,0 +1,45 @@
+@import "../../base"
+
+.lineWrapper
+    position: relative
+    transition-duration: 1s
+    width: 100%
+    height: auto
+    span
+        z-index: 1
+        letter-spacing: 2px
+        word-spacing: 1px
+        font-size: larger
+        color: #00000098
+        width: 100px
+        position: absolute
+        left: 0
+        right: 0
+        height: 25px
+        margin: auto
+        top: -12.5px
+        &[data-hasLine="true"]
+            top: 0
+            bottom: 0
+    .line
+        background-image: linear-gradient(160deg, transparent 25%, $time-line-color 40%, $time-line-color 60%, transparent 75%)
+        background-size: 2%
+        background-repeat: repeat-x
+        position: absolute
+        margin: auto
+        width: 100%
+        height: $line-width
+        top: 0
+        bottom: 0
+        opacity: 0.6
+        z-index: -1
+    &[data-length="full"]
+        width: 100%
+    &[data-length="half"]
+        width: 100%
+        .line
+            width: 50%
+            right: 0
+            left: 0
+    &[data-length="small"]
+        height: $line-small-length
