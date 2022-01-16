@@ -1,26 +1,30 @@
 import React from "react";
 import styles from "./Experience.module.sass";
+import { formatDate } from "../../../../../lib/extentions";
 
 interface Props {
-    date: Array<Date>;
-    type: "freelance" | "company" | "personal" | "research";
-    company: string;
-    role: string;
-    jobType: string;
-    overview: string;
-    background: JSX.Element;
-    responsibilities: JSX.Element;
-    links: Array<JSX.Element>;
-    isProject: boolean;
-    isFinished: boolean;
+    autoData?: Object;
+    date?: Array<Date>;
+    note?: string;
+    type?: "freelance" | "company" | "personal" | "research";
+    company?: string;
+    role?: string;
+    jobType?: string;
+    overview?: string;
+    background?: JSX.Element;
+    responsibilities?: JSX.Element;
+    links?: Array<JSX.Element>;
+    isProject?: boolean;
+    isFinished?: boolean;
     className?: string;
     onClick?: Function | undefined;
 }
 
 export default class Experience extends React.Component<Props> {
-    private date: Array<Date>;
+    private date: any;
     private isProject: boolean;
-    private isFinished: boolean;
+    private isFinished: boolean = false;
+    private note: string;
     private type: string;
     private company: string;
     private role: string;
@@ -33,19 +37,36 @@ export default class Experience extends React.Component<Props> {
     private onClick: React.MouseEventHandler<HTMLButtonElement>;
     constructor(props: React.ComponentProps<any>) {
         super(props);
-        this.date = props.date;
-        this.type = props.type;
-        this.company = props.company;
-        this.role = props.role;
-        this.jobType = props.jobType;
-        this.overview = props.overview;
-        this.background = props.background;
-        this.responsibilities = props.responsibilities;
-        this.links = props.links;
-        this.isProject = props.isProject;
-        this.isFinished = props.isFinished;
+        this.note = props.autoData.note ? props.autoData.note : props.note;
+        this.date = props.autoData.period ? props.autoData.period : props.date;
+        this.type = props.autoData.type ? props.autoData.type : props.type;
+        this.company = props.autoData.company
+            ? props.autoData.company
+            : props.company;
+        this.role = props.autoData.role ? props.autoData.role : props.role;
+        this.jobType = props.autoData.jobType
+            ? props.autoData.jobType
+            : props.jobType;
+        this.overview = props.autoData.overview
+            ? props.autoData.overview
+            : props.overview;
+        this.background = props.autoData.background
+            ? props.autoData.background
+            : props.background;
+        this.responsibilities = props.autoData.responsibilities
+            ? props.autoData.responsibilities
+            : props.responsibilities;
+        this.links = props.autoData.links ? props.autoData.links : props.links;
+        this.isProject =
+            props.autoData.isProject !== undefined
+                ? props.autoData.isProject
+                : props.isProject;
+        this.isFinished =
+            props.autoData.isFinished !== undefined
+                ? props.autoData.isFinished
+                : props.isFinished;
         this.className = props.className;
-        this.onClick = props.onClick;
+        this.onClick = props.onClick !== undefined ? props.onClick : () => {};
     }
 
     // private format(children: React.ReactNode): Array<JSX.Element> {
@@ -57,11 +78,6 @@ export default class Experience extends React.Component<Props> {
     // }
 
     render() {
-        const period = (
-            <b>
-                {this.date[0]} — {this.date[1]}
-            </b>
-        );
         const type = (
             <b>
                 {() => {
@@ -80,7 +96,13 @@ export default class Experience extends React.Component<Props> {
         );
         const company = (
             <>
-                <b>{this.isProject ? "Project Name: " : "Company Name: "}</b>
+                <b>
+                    {this.type === "research"
+                        ? "Laboratory Name: "
+                        : this.isProject
+                        ? "Project Name: "
+                        : "Company Name: "}
+                </b>
                 <span>{this.company}</span>
             </>
         );
@@ -93,7 +115,7 @@ export default class Experience extends React.Component<Props> {
                         ? "Contract Duration: "
                         : "Employement Period: "}
                 </b>
-                <span>{this.date[0].valueOf() - this.date[1].valueOf()}</span>
+                <span>{calcMonths(this.date)}</span>
             </>
         );
         const role = (
@@ -114,20 +136,74 @@ export default class Experience extends React.Component<Props> {
                 <div>{this.overview}</div>
             </>
         );
+        const background = (
+            <>
+                <b>Background</b>
+                <div>{this.background}</div>
+            </>
+        );
+        const responsibilities = (
+            <>
+                <b>Responsibilities</b>
+                <div>{this.responsibilities}</div>
+            </>
+        );
+        const note = <i className={styles.note}>Note: {this.note}</i>;
         return (
             <div className={styles.wrapper + " " + this.className}>
-                <div>{period}</div>
+                <div>{formatPeriod(this.date)}</div>
                 <div>{type}</div>
-                <div>{company}</div>
+                <div
+                    className={
+                        this.isFinished === false ? styles.unfinished : ""
+                    }
+                >
+                    {company}
+                </div>
                 <div>{duration}</div>
                 <div>{role}</div>
                 <div>{jobType}</div>
                 <ul>
-                    <li>{overview}</li>
-                    <li>{this.background}</li>
-                    <li>{this.responsibilities}</li>
+                    <li>
+                        {overview}
+                        {this.isFinished === false ? (
+                            <>
+                                <br />
+                                {note}
+                            </>
+                        ) : (
+                            ""
+                        )}
+                    </li>
+                    <li>{background}</li>
+                    <li>{responsibilities}</li>
                 </ul>
             </div>
         );
     }
 }
+
+export const calcWeeks = (period: any) => {
+    // let result =
+    //     period.end.getMonth() -
+    //     period.start.getMonth() +
+    //     12 * (period.end.getFullYear() - period.start.getFullYear());
+    let result = period.end.valueOf() - period.start.valueOf();
+    result /= 1000 * 3600 * 24 * 7;
+    return result + " Weeks";
+};
+
+export const calcMonths = (period: any) => {
+    let result =
+        period.end.getMonth() -
+        period.start.getMonth() +
+        12 * (period.end.getFullYear() - period.start.getFullYear());
+    return result + " Months";
+};
+
+export const formatPeriod = (period: any) => (
+    <b className={styles.period}>
+        {formatDate(period.start, "Y-m-d")} —
+        {" " + formatDate(period.end, "Y-m-d")}
+    </b>
+);

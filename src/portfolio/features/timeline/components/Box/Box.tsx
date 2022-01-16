@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Ref } from "react";
 import styles from "./Box.module.sass";
 
 interface Props {
+    insideRef?: Ref<HTMLDivElement>;
     className?: string;
     noPadding?: true;
     color?: string | undefined;
@@ -36,6 +37,7 @@ export default class Box extends React.Component<Props> {
                         : { backgroundColor: this.bgColor }
                 }
                 onClick={this.onClick}
+                ref={this.props.insideRef}
             >
                 {this.props.children}
             </div>
