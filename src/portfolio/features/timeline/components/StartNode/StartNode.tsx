@@ -13,12 +13,8 @@ export default class StartNode extends React.Component<Props> {
     private color: string | undefined;
     constructor(props: React.ComponentProps<any>) {
         super(props);
-
-        // this.value = props.value;
-        // this.colors = props.colors;
         this.className = props.className;
         this.color = props.color;
-        // this.height = props.height;
     }
 
     render() {

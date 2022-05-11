@@ -5,4 +5,8 @@ interface Props {
     id: string;
     title: string;
 }
-export default class PersonalInfo extends React.Component<Props, any> {}
+export default class PersonalInfo extends React.Component<Props, any> {
+    render() {
+        return <div></div>;
+    }
+}

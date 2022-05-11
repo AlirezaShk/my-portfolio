@@ -16,13 +16,16 @@ export const formatDate = (date: Date, format: string) => {
                 break
 
             case 'm':
-                res += date.getMonth() + '-'
+                res += withPrecedingZero(date.getMonth().toString()) + '-'
                 break
 
             case 'd':
-                res += date.getDate() + '-'
+                res += withPrecedingZero(date.getDate().toString()) + '-'
                 break
         }
     }
     return res.slice(0, -1)
 }
+
+export const withPrecedingZero = (target: string) =>
+    Number(target) < 10 ? '0' + target : target

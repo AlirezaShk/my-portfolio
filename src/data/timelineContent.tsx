@@ -804,8 +804,9 @@ export default {
                         efficient one.
                     </li>
                     <li>
-                        Geological data acquisition through google maps APIs
-                        were studied and some were applied.
+                        Geological data acquisition through google maps APIs and
+                        OSMnx (OpenStreetMap) were studied and some were
+                        applied.
                     </li>
                 </ol>
             </div>
@@ -875,7 +876,7 @@ export default {
             end: new Date(2021, 9, 25),
         },
         section: [<span>Uoozet Multimedia Corporation</span>],
-        title: [<span>Technical Lead Senior Developer</span>],
+        title: [<span>Uoozet</span>],
         overview: [
             <div>
                 The project is a kongregation of multiple online media sharing
@@ -997,7 +998,7 @@ export default {
         isFinished: true,
         type: "company",
         jobType: "Permanent (Flexible Full Time)",
-        role: "CTO, Senior Full Stack Web Developer",
+        role: "Technical Lead, Senior Developer",
         company: "UoozET",
         links: ["https://www.uoozet.com/"],
     },

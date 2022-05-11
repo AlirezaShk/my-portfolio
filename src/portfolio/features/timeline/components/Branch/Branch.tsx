@@ -101,7 +101,11 @@ export default class Branch extends React.Component<Props, State> {
                     <div className={styles.note}>{note}</div>
                 </div>
                 <div className={styles.contentWrapper}>
-                    <Line type="v" lengthType={"full"} />
+                    <Line
+                        className={styles.verticalLine}
+                        type="v"
+                        lengthType={"full"}
+                    />
                     <Line
                         className={styles.connectorLine}
                         type="h"

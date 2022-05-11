@@ -66,28 +66,6 @@ export default class Timeline extends React.Component<any, any> {
                     color={colors.uni.line}
                     bgColor={colors.uni.bg}
                 >
-                    {/* <Branch
-                        type={this.distributeDir(1)}
-                        color={colors.uni.line}
-                    >
-                        <div>Hi this is test2</div>
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ea, iste quo adipisci sint qui dicta ullam
-                            facilis incidunt omnis? Officiis dolorem doloremque
-                            harum quibusdam laudantium quasi, sint asperiores?
-                            Atque, debitis! Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Ea, iste quo adipisci
-                            sint qui dicta ullam facilis incidunt omnis?
-                            Officiis dolorem doloremque harum quibusdam
-                            laudantium quasi, sint asperiores? Atque, debitis!
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ea, iste quo adipisci sint qui dicta ullam
-                            facilis incidunt omnis? Officiis dolorem doloremque
-                            harum quibusdam laudantium quasi, sint asperiores?
-                            Atque, debitis!
-                        </div>
-                    </Branch> */}
                     <DateLine
                         date={formatDate(content.uni.period.start, "Y-m-d")}
                     />
@@ -351,6 +329,7 @@ export default class Timeline extends React.Component<any, any> {
                         type={this.distributeDir(10)}
                         color={colors.uzt.line}
                         previewHeight={1500}
+                        extLink={content.uzt.links[0]}
                     >
                         <div>{calcMonths(content.uzt.period)}</div>
                         <div className={styles.titleWrapper}>
@@ -364,7 +343,7 @@ export default class Timeline extends React.Component<any, any> {
                         withLine={true}
                     />
                 </Section>
-                <End />
+                <End color={defaultTLColor} />
             </div>
         );
     }
